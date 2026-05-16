@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 224 33% 5%;
+  --foreground: 210 40% 98%;
+  --card: 224 30% 8%;
+  --card-foreground: 210 40% 98%;
+  --primary: 185 100% 65%;
+  --primary-foreground: 224 33% 5%;
+  --muted: 222 20% 15%;
+  --muted-foreground: 215 15% 70%;
+  --accent: 268 90% 68%;
+  --accent-foreground: 210 40% 98%;
+  --border: 220 18% 18%;
+  --input: 220 18% 18%;
+  --ring: 185 100% 65%;
+}
+
+* {
+  border-color: hsl(var(--border));
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(83, 238, 255, 0.16), transparent 30%),
+    radial-gradient(circle at 85% 12%, rgba(150, 93, 255, 0.18), transparent 28%),
+    #05070d;
+  color: hsl(var(--foreground));
+  cursor: none;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  cursor: none;
+}
+
+::selection {
+  background: rgba(102, 241, 255, 0.35);
+}
+
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04));
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.32);
+  backdrop-filter: blur(22px);
+}
+
+.noise {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  pointer-events: none;
+  opacity: 0.08;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+}
+
+.aurora-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, transparent, black 18%, black 72%, transparent);
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+@media (max-width: 768px) {
+  body,
+  a,
+  button,
+  input,
+  textarea,
+  select {
+    cursor: auto;
+  }
+}

@@ -21,7 +21,7 @@ export default function AdminPage() {
   const { toast } = useToast();
   const { products, source, error } = useProducts();
   const configuredAdminEmail = process.env.NEXT_PUBLIC_ADMIN_EMAIL?.trim().toLowerCase();
-  const fallbackAdminEmail = "bhagyasrimedisetti@gmail.com";
+  const fallbackAdminEmail = "admin@example.com";
   const adminEmails = new Set([fallbackAdminEmail, configuredAdminEmail].filter(Boolean));
   const currentEmail = user?.email?.trim().toLowerCase();
   const adminEmail = configuredAdminEmail ?? fallbackAdminEmail;

@@ -1,0 +1,8 @@
+# Netlify build configuration for this Next.js app.
+# Do not commit secret values in environment variables.
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NODE_ENV = "production"
